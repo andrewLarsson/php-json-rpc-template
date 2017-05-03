@@ -1,0 +1,24 @@
+{
+	"autoload": {
+		"psr-4": {
+			"JSONRPCTEMPLATE\\API\\": "./"
+		}
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/andrewLarsson/php-helpers"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/andrewLarsson/php-helpers-pdo"
+		}
+	],
+    "require": {
+        "fguillot/json-rpc": "@stable",
+        "league/event": "^2.1",
+        "league/container": "^2.2",
+		"andrewlarsson/php-helpers": "dev-master",
+		"andrewlarsson/php-helpers-pdo": "dev-master"
+    }
+}

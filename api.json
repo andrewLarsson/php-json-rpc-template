@@ -1,0 +1,135 @@
+{
+	"name": "JSONRPCTEMPLATE",
+	"type": {
+		"name": "jsonrpc",
+		"version": "2.0"
+	},
+	"types" : [
+		{
+			"name": "Authentication",
+			"definition": [
+				{
+					"name": "AuthorizationType",
+					"type": "string"
+				},
+				{
+					"name": "AccessToken",
+					"type": "string"
+				},
+				{
+					"name": "RefreshToken",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"definition": [
+				{
+					"name": "AccountID",
+					"type": "number"
+				},
+				{
+					"name": "Username",
+					"type": "string"
+				}
+			]
+		}
+	],
+	"methods": [
+		{
+			"name": "Authorization.Authenticate",
+			"params": [
+				{
+					"name": "Username",
+					"type": "string"
+				},
+				{
+					"name": "Password",
+					"type": "string"
+				}
+			],
+			"result": {
+				"returns": "singular",
+				"type": "Authentication"
+			}
+		},
+		{
+			"name": "Authorization.Refresh",
+			"params": [
+				{
+					"name": "RefreshToken",
+					"type": "string"
+				}
+			],
+			"result": {
+				"returns": "singular",
+				"type": "Authentication"
+			}
+		},
+		{
+			"name": "Account.Load",
+			"params": [
+				{
+					"name": "AccountID",
+					"type": "number"
+				}
+			],
+			"result": {
+				"returns": "singular",
+				"type": "Account"
+			}
+		},
+		{
+			"name": "Account.Create",
+			"params": [
+				{
+					"name": "Username",
+					"type": "string"
+				},
+				{
+					"name": "Password",
+					"type": "string"
+				}
+			],
+			"result": {
+				"returns": "singular",
+				"type": "Account"
+			}
+		},
+		{
+			"name": "Account.ChangeUsername",
+			"params": [
+				{
+					"name": "AccountID",
+					"type": "number"
+				},
+				{
+					"name": "Username",
+					"type": "string"
+				}
+			],
+			"result": {
+				"returns": "void",
+				"type": null
+			}
+		},
+		{
+			"name": "Account.ChangePassword",
+			"params": [
+				{
+					"name": "AccountID",
+					"type": "number"
+				},
+				{
+					"name": "Password",
+					"type": "string"
+				}
+			],
+			"result": {
+				"returns": "void",
+				"type": null
+			}
+		}
+	]
+}
